@@ -3,33 +3,56 @@
   margin: 0;
 }
 
-.input__panel {
-  width: 500px;
-  margin: 10px;
-  padding: 5px;
+/*.input__panel {*/
+/*  width: 500px;*/
+/*  margin: 10px;*/
+/*  padding: 5px;*/
+/*}*/
+
+/*.btn__create {*/
+/*  padding: 5px;*/
+/*  width: 25%;*/
+/*}*/
+
+/*.input {*/
+/*  border: 2px solid black;*/
+/*  border-radius: 5px;*/
+/*  height: 25px;*/
+/*  margin: 5px;*/
+/*  padding: 5px;*/
+/*  width: 68%;*/
+/*}*/
+
+
+
+
+
+.container{
+  width: 60%;
+  margin-top: 50px;
 }
 
-.btn__create {
-  padding: 5px;
-  width: 25%;
+.button__panel {
+  width: 100%;
 }
 
-.input {
-  border: 2px solid black;
-  border-radius: 5px;
-  height: 25px;
-  margin: 5px;
-  padding: 5px;
-  width: 68%;
-}
 
-.task__list {
-  width: 500px;
-}
 
 .task__list-element {
-  border: 2px solid black;
+  display: flex;
+  border: 2px solid rgba(6, 48, 118, 0.6);
   border-radius: 5px;
   margin: 5px;
   padding: 5px;
 }
+
+.task_text {
+  display: flex;
+  justify-content: center;
+}
+
+.button_task {
+  display: flex;
+  justify-content: end;
+}
+

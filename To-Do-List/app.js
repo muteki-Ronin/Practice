@@ -45,9 +45,10 @@ class Todo {
     this.taskList.innerHTML = "";
     this.tasks.forEach((task) => {
       this.taskList.innerHTML += `
-           <div class="task__list-element" data-taskId="${task.taskId}">${task.taskValue} 
-           <button class="js--btn__edit-task">Edit</button>
-           <button class="js--btn__del-task">Delete</button></div>`;
+           <div class="task__list-element" data-taskId="${task.taskId}">
+           ${task.taskValue} 
+           <button class="js--btn__edit-task btn btn-outline-warning btn-sm">Edit</button>
+           <button class="js--btn__del-task btn btn-outline-danger btn-sm">Delete</button></div>`;
     });
 
     this.editTask();
