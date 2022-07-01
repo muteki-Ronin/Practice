@@ -12,23 +12,25 @@
 
 <body>
 
-<div class="container">
-  <div class="js--input__panel input-group mb-3">
-    <input type="text" class="js--input form-control" aria-label="Recipient's username Large" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-      <button class="js--btn__create btn btn-outline-secondary btn-outline-success btn-lg btn-block" type="button">Create new task</button>
+  <div class="container">
+    <div class="js--input__panel input-group mb-3">
+      <input type="text" class="js--input form-control" aria-label="Recipient's username Large"
+        aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="js--btn__create btn btn-outline-secondary btn-outline-success btn-lg btn-block"
+          type="button">Create new task</button>
+      </div>
+    </div>
+
+    <div class="js--button__panel button__panel">
+      <button class="js--btn__all btn btn-outline-primary btn-lg btn-block">All</button>
+      <button class="js--btn__not-checked btn btn-outline-primary btn-lg btn-block">Not checked</button>
+    </div>
+
+    <div class="js--task__list task__list">
+      <p class="js--start__message start__messege">Not new task</p>
     </div>
   </div>
-
-  <div class="js--button__panel button__panel">
-    <button class="js--btn__all btn btn-outline-primary btn-lg btn-block">All</button>
-    <button class="js--btn__not-checked btn btn-outline-primary btn-lg btn-block">Not checked</button>
-  </div>
-
-  <div class="js--task__list task__list">
-    <p class="js--start__message start__messege">Not new task</p>
-  </div>
-</div>
 
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
   <script src="app.js"></script>

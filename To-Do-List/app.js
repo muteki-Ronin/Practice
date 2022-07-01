@@ -46,45 +46,50 @@ class Todo {
     this.tasks.forEach((task) => {
       this.taskList.innerHTML += `
            <div class="task__list-element" data-taskId="${task.taskId}">
-           ${task.taskValue} 
-           <button class="js--btn__edit-task btn btn-outline-warning btn-sm">Edit</button>
-           <button class="js--btn__del-task btn btn-outline-danger btn-sm">Delete</button></div>`;
+              <span class="task__list-span" contenteditable="false">${task.taskValue}</span>
+              <button class="js--btn__edit-task btn btn-outline-warning btn-sm">Edit</button>
+              <button class="js--btn__del-task btn btn-outline-danger btn-sm">Delete</button>
+           </div>`;
     });
-
     this.editTask();
     this.deleteTask();
   }
 
-
-
   editTask() {
     this.taskList.addEventListener('click', (event) => {
-      if(event.target.classList.contains('js--btn__edit-task')) {
-        console.log(event.target);
+      if (event.target.classList.contains('js--btn__edit-task')) {
+        this.editable = event.target.previousElementSibling;
+        if (this.editable.contentEditable === 'false') {
+          event.target.innerText = 'SAVE';
+          this.editable.contentEditable = 'true';
+        } else {
+          event.target.innerText = 'Edit';
+          this.editable.contentEditable = 'false';
+          this.tasks.find((item) => {
+            if (item.taskId === +event.target.parentElement.dataset.taskid) {
+              item.taskValue = this.editable.innerText;
+              localStorage.setItem('Todo', JSON.stringify(this.tasks));
+            }
+          });
+        }
       }
-      // console.log('Кнопка редактирования таски.');
-      // console.log(event.target);
-    });
+    }
+    );
   }
 
   deleteTask() {
     this.taskList.addEventListener('click', (event) => {
-      if(event.target.classList.contains('js--btn__del-task')) {
+      if (event.target.classList.contains('js--btn__del-task')) {
         event.target.parentElement.remove();
         this.tasks.find((item, index) => {
-            if(item.taskId === +event.target.parentElement.dataset.taskid) {
-              return this.tasks.splice(index, 1);
-            }
+          if (item.taskId === +event.target.parentElement.dataset.taskid) {
+            return this.tasks.splice(index, 1);
+          }
         });
         localStorage.setItem('Todo', JSON.stringify(this.tasks));
       }
     });
   }
-
-
-
-
-
 }
 
 const newTodo = new Todo({
@@ -95,6 +100,7 @@ const newTodo = new Todo({
   taskList: document.querySelector('.js--task__list'),
   startMessage: document.querySelector('.js--start__message'),
 });
+
 
 
 
