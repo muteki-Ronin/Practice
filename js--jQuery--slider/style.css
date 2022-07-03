@@ -1,0 +1,41 @@
+.gallery {
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 1024px;
+  margin: 10px auto;
+  height: 847px;
+}
+
+.big {
+  background-image: url("../images/gallery/loader.gif");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 1024px;
+  height: 768px;
+  border: 1px dotted #ccc;
+}
+
+.small {
+  margin-top: 10px;
+  margin-left: 33px;
+}
+
+.small a img {
+  border: none;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.button:hover {
+  cursor: pointer;
+}
